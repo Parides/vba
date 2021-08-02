@@ -1,0 +1,78 @@
+.dyn-height {
+    max-height:250px;
+    overflow-y:scroll;
+}
+
+video, input {
+    display: block;
+}
+
+.chart {
+    text-align: center;
+    margin: auto;
+}
+
+
+/* div { outline: 1px solid red !important; } */
+
+.boxmiddle {
+    text-align: center;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    /*align-items: center; /* align vertical */
+}
+
+.table-fixed tbody {
+    height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color:red;
+    text-align: center;
+}
+
+ .zoom {
+    /* padding: 50px; */
+    transition: transform .2s;
+    /* width: 200px; */
+    /* height: 200px; */
+    /* margin: 0 auto; */
+}
+  
+  .zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
+
+  .zoom-nav {
+    /* padding: 50px; */
+    transition: transform .2s;
+    /* width: 200px; */
+    /* height: 200px; */
+    /* margin: 0 auto; */
+}
+
+.dark-mode {
+    background-color: #343a40;
+    color: white;
+  }

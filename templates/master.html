@@ -1,0 +1,195 @@
+{% extends "base.html"%}
+{% block title %}Dashboard{% endblock%}
+{% block navbar %}
+    <!-- SIDE BAR ENTRIES -->
+    <li class="zoom nav-item" rel="Dashboard">
+        <a class="nav-link active" href="#tab-dashboard" data-toggle="pill" aria-selected="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            <span class="ml-2">Dashboard</span>
+        </a>
+    </li>
+
+    <li class="zoom nav-item" rel="New User">
+        <a class="nav-link" href="#tab-records" data-toggle="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+            <span class="ml-2">New user</span>
+        </a>
+    </li>
+
+    <li class="zoom nav-item" rel="New Module">
+        <a class="nav-link" href="#tab-facerec" data-toggle="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+            </svg>
+            <span class="ml-2">New Module</span>
+        </a>
+    </li>
+
+    <li class="zoom nav-item" rel="Your Profile">
+        <a class="nav-link" href="#tab-profile" data-toggle="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            </svg>
+            <span class="ml-2">Your Profile</span>
+        </a>
+    </li>
+
+{% endblock %}
+{% block content %}
+    <div class="tab-content" id="tabContent">
+        <div class="tab-pane fade show active" name="Dashboard" id="tab-dashboard" role="tabpanel">
+            <!--* Card init *-->
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                <!-- Title -->
+                    <h5 class="h3 mb-0">Attendance</h5>
+                </div>
+                <!-- Card body -->
+                <div class="card-body">
+                    <!-- Chart wrapper -->
+                    <!-- <div class = "row">
+                        <div class="col-6 chart">
+                            <canvas id="myChart3"></canvas>
+                        </div>
+                        <div class="col-6 chart">
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div> -->
+                    <canvas id="myChart5"></canvas>
+                    <script src="{{url_for('static', filename='chart5.js')}}"></script>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" name = "New User" id="tab-records" role="tabpanel">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="card">
+                        <h5 class="card-header">New User Details</h5>
+                        <div class="card-body">
+                            <form action = "{{url_for('adduser')}}", method = "POST">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Username" required> 
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="username">Full Name</label>
+                                    <input type="text" class="form-control" name="name"placeholder="Full Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="permission">User Perimission</label>
+                                    <select class="custom-select" name = "permission">
+                                        <option value="3">User</option>
+                                        <!-- <option selected>Please Select Permission</option> -->
+                                        <option value="2">Admin</option>
+                                    
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" name = "module_or_user" value ="user" class="btn btn-outline-success">Add users</button>
+                                    <button type="reset" class="btn btn-outline-danger">Reset</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" name="New Module" id="tab-profile" role="tabpanel">
+            <div class="row">
+                <div class="container-fluid">
+                    <form action = "{{ url_for('changepass') }}", method = "POST">
+                        <div class="card">
+                            <h5 class="card-header">User details</h5>
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="username">Name</label>
+                                        <input type="text" class="form-control" id="inlineFormInputName" placeholder="username" name = "user_name" value = "{{user_name if user_name}}" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="username">Username</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">@
+
+                                                </div>
+                                            </div>
+                                            
+                                            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" name="user_id" value= "{{user_id if user_id}}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="password"> New Password </label>
+                                    <input type="password" class="form-control" name="user_password" placeholder="New Password" minlength="8" maxlength="20" required> 
+                                    <small id="passwordHelpInline" class="text-muted">
+                                        Must be 8-20 characters long.
+                                    </small>                    
+                                </div>
+                            
+                                <button type="submit" class="btn btn-outline-success">Submit changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade " name="Your Profile" id="tab-facerec" role="tabpanel">
+            <div class="row">
+                <div class="container-fluid">
+                    <form action = "{{ url_for('addmodule') }}", method = "POST">
+                        <div class="card">
+                            <h5 class="card-header">New Module Details</h5>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="module_id">Module ID</label>
+                                    <input type="text" class="form-control" name="module_id" placeholder="Example: ABC123AB" maxlength="8" required> 
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="module_name">Module Name</label>
+                                    <input type="text" class="form-control" name="module_name"placeholder="Full Name" required>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="module_threshold">Module Threshold</label>
+                                    <input type="number" class="form-control" name="module_threshold"  min="0" max="10" value = "0" placeholder="0">
+                                    <small id="module_threshold" class="form-text text-muted">The minimum number of absences.</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="module_threshold">User ID Responsible for Module </label>
+                                    <input type="text" class="form-control" name="module_responsible"placeholder="Example: 3244353" required>
+                                </div>
+
+                                </select>
+                                <div class="form-group">
+                                    <button type="submit" name = "module_or_user" value ="module" class="btn btn-outline-success">Create Module</button>
+                                    <button type="reset" class="btn btn-outline-danger">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

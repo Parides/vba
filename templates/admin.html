@@ -1,0 +1,465 @@
+{% extends "base.html"%}
+{% block title %}Dashboard{% endblock%}
+{% block navbar %}
+    <!-- SIDE BAR ENTRIES -->
+    <li class="zoom nav-item" rel="Dashboard">
+        <a class="nav-link" href="#tab-dashboard" data-toggle="pill" aria-selected="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+            </svg>
+            <span class="ml-2">Dashboard</span>
+        </a>
+    </li>
+
+    <li class="zoom nav-item" rel="Attendance Records">
+        <a class="nav-link" href="#tab-records" data-toggle="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            <span class="ml-2">Users & Attendance</span>
+        </a>
+    </li>
+
+    <li class="zoom nav-item" rel="Your Profile">
+        <a class="nav-link" href="#tab-profile" data-toggle="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            </svg>
+            <span class="ml-2">Your Profile</span>
+        </a>
+    </li>
+
+    <li class="zoom nav-item" rel="Module Users">
+        <a class="nav-link" href="#tab-moduleusers" data-toggle="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+            </svg>
+            <span class="ml-2">Module Users</span>
+        </a>
+    </li>
+{% endblock %}
+{% block content %}
+    <div class="tab-content" id="tabContent">
+
+        <div class="tab-pane fade show active" name="Dashboard" id="tab-dashboard" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="h3 mb-0">Attendance per session </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="myChart23"></canvas>
+                    <script src="{{url_for('static', filename='chart7.js')}}"></script>
+                </div>
+            </div>
+
+            <div class="card my-4">
+                <div class="card-header">
+                    <h5 class="h3 mb-0">Average Attendance</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="myChart66"></canvas>
+                    <script src="{{url_for('static', filename='chart6.js')}}"></script>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="tab-pane fade" id="tab-records" role="tabpanel">
+
+            <div class="row">
+                <div class="container-fluid">
+                    <form action = "{{ url_for('manualattendance') }}", method = "POST">
+                        <div class="card">
+                            <h5 class="card-header">Manual Attendance</h5>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <div class="card">
+                                                <h5 class="card-header">Module Users</h5>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <input id="inModuleSearch" type="text" class="form-control" placeholder="Search">
+                                                    </div>
+                                                    <select id="inModule" name="inModule" class="custom-select" size="10" multiple="multiple">
+                                                    {% for row in module_users %}
+                                                        <option value = "{{row[0]}}">{{row[0]}} - {{row[1]}}</option>
+                                                    {% endfor %}
+                                                    </select>
+                                                </div>
+                                                <!-- <button  type="button" id="add" class="btn btn-danger" onclick="addOptions( 'select1', 'select2' )"> &#8702; </button> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="card">
+                                                <h5 class="card-header">Sessions</h5>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <input id="searchNotExisting" type="text" class="form-control" placeholder="Search">
+                                                    </div>
+                                                    <select id="sessionNames" class="custom-select" size="10" name="sessionNames">
+                                                        {% for row in sessions %}
+                                                            <option value={{row[0]}}>{{row[0]}} - {{row[1]}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                                <!-- <button  type="button" id="remove" class="btn btn-success" onclick="addOptions( 'select2', 'select1' )">&#8701;</button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button  type="submit" class="btn btn-outline-success"> Submit Changes </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="container-fluid">
+                    <div class="card">
+                        <h5 class="card-header">Attendances</h5>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input id="myInput" type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="table-responsive" id="attendanceTable" style="max-height:550px;overflow: scroll;">
+                                <table class="table" style="text-align: center;">
+                                    <thead class="thead">
+                                        <tr>
+                                            <th scope="col">Session</th>
+                                            <th scope="col">User</th>
+                                            <th scope="col">Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="myTable">
+                                        {% if user_attendance %}
+                                            {% for row in user_attendance %}
+                                                <tr>
+
+                                                <!-- <th scope="row">1</th> -->
+                                                    {% for value in row %}
+                                                            <!-- <th scope="row">{{value}}</th> -->
+                                                            <td>{{value}}</td>
+                                                    {% endfor %}                                            
+                                                </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card my-4">
+                        <h5 class="card-header">Absenses</h5>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input id="myInput2" type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="table-responsive" id="absencesTable" style="max-height:550px;overflow: scroll;">
+                                <table class="table" style="text-align: center;">
+                                    <thead class="thead">
+                                        <tr>
+                                            <th scope="col">Session</th>
+                                            <th scope="col">User</th>
+                                            <th scope="col">Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="myTable">
+                                        {% for row in absences %}
+                                            <tr>
+
+                                            <!-- <th scope="row">1</th> -->
+                                                {% for value in row %}
+                                                        <!-- <th scope="row">{{value}}</th> -->
+                                                        <td>{{value}}</td>
+                                                {% endfor %}                                            
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="tab-profile" role="tabpanel">
+            <div class="row">
+                <div class="container-fluid">
+                    <form action = "{{ url_for('changepass') }}", method = "POST">
+                        <div class="card">
+                            <h5 class="card-header">User details</h5>
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="username">Name</label>
+                                        <input type="text" class="form-control" id="inlineFormInputName" placeholder="username" name = "user_name" value = "{{user_name if user_name}}" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="username">Username</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">@
+
+                                                </div>
+                                            </div>
+                                            
+                                            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" name="user_id" value= "{{user_id if user_id}}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="password"> New Password </label>
+                                    <input type="password" class="form-control" name="user_password" placeholder="New Password" minlength="8" maxlength="20" required> 
+                                    <small id="passwordHelpInline" class="text-muted">
+                                        Must be 8-20 characters long.
+                                    </small>                    
+                                </div>
+                            
+                                <button type="submit" class="btn btn-outline-success">Submit changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade " id="tab-moduleusers" role="tabpanel">
+            <div class="row">
+                <div class="container-fluid">
+                    <form action = "", method = "POST">
+                        <div class="card">
+                            <h5 class="card-header">Manage Module Users</h5>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <div class="card">
+                                                <h5 class="card-header">Users in module</h5>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <input id="searchExisting" type="text" class="form-control" placeholder="Search">
+                                                    </div>
+                                                <!-- <select id="sbOne" class="custom-select" size="10" multiple> -->
+                                                    <select id="select1" name="select1" class="custom-select" size="10" multiple="multiple">
+                                                    <!-- <option selected>1</option>
+                                                    {% for x in range(2,30) %}
+                                                    <option value="{{x}}">{{x}}</option>
+                                                    {% endfor %} -->
+                                                    {% for row in module_users %}
+                                                        <option value = "{{row[0]}}">{{row[0]}} - {{row[1]}}</option>
+                                                    {% endfor %}
+                                                    </select>
+                                                </div>
+                                                <button  type="button" id="add" class="btn btn-danger" onclick="addOptions( 'select1', 'select2' )"> &#8702; </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="card">
+                                                <h5 class="card-header">Users not in module</h5>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <input id="searchNotExisting" type="text" class="form-control" placeholder="Search">
+                                                    </div>
+                                                    <select id="select2" class="custom-select" size="10" name="select2" multiple>
+                                                        {% for row in all_users %}
+                                                            <option value={{row[0]}}>{{row[0]}} - {{row[1]}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                                <button  type="button" id="remove" class="btn btn-success" onclick="addOptions( 'select2', 'select1' )">&#8701;</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button  type="submit" class="btn btn-outline-success" onclick="selectAll();"> Submit Changes </button>
+                        </div>
+                    </form>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#attendanceTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            $("#myInput2").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#absencesTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            $("#searchExisting").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#select1 option").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            $("#searchNotExisting").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#select2 option").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+
+
+            var options = $("#select1 option");// Collect options         
+            options.detach().sort(function(a,b) {// Detach from select, then Sort
+                var at = $(a).text();
+                var bt = $(b).text();         
+                return (at > bt)?1:((at < bt)?-1:0);// Tell the sort function how to order
+            });
+            options.appendTo("#select1"); // Re-attach to select
+
+        });
+
+        $("#add").on("click", function() {
+            var options = $("#select2 option");// Collect options         
+            options.detach().sort(function(a,b) {// Detach from select, then Sort
+                var at = $(a).text();
+                var bt = $(b).text();         
+                return (at > bt)?1:((at < bt)?-1:0);// Tell the sort function how to order
+            });
+            options.appendTo("#select2"); // Re-attach to select
+
+        });
+
+        $("#remove").on("click", function() {
+            var options = $("#select1 option");// Collect options         
+            options.detach().sort(function(a,b) {// Detach from select, then Sort
+                var at = $(a).text();
+                var bt = $(b).text();         
+                return (at > bt)?1:((at < bt)?-1:0);// Tell the sort function how to order
+            });
+            options.appendTo("#select1"); // Re-attach to select
+
+        });
+
+        let colors4 = ['rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)'];
+        let bcolors4 = ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)'];
+        // define the chart data
+        var chartData = {
+            labels : [{% for item in attendance_labels %}
+                        "{{item}}",
+                        {% endfor %}],
+            datasets : [{
+                data : [{% for item in attendance_values %}
+                            {{item * 100}},
+                        {% endfor %}],
+
+                backgroundColor: colors4,
+                borderColor: bcolors4,
+                borderWidth: 1
+            }]
+        }
+
+        var options = {
+            title: {
+                text: "Attendance percentage per module (%)",
+                display: true
+            },
+            scales: {
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                        suggestedMax: 100,
+                        callback: function (value) {
+                            return (value / this.max * 100).toFixed(0) + '%'; // convert it to percentage
+                        },
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: true
+            },
+
+            animation: {
+                duration: 2000, //ms
+                easing: 'easeInOutQuint'
+            }
+            
+        }
+        
+        // get chart canvas
+        var ctx = document.getElementById("myChart23").getContext("2d");
+        
+        // create the chart using the chart canvas
+        var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: options
+        });
+
+
+
+        var missed_attendance = 100 - {{average_attendance * 100}};
+        var myChart = new Chart(myChart66, {
+            type: 'doughnut',
+            data: {
+            labels: ["Attended", "Absent"],
+            datasets: [{
+                backgroundColor: ['rgba(54, 162, 235, 0.4)', 'rgba(255, 99, 132, 0.4)'],
+                borderColor: ['rgba(54, 162, 235, 1)','rgba(255,99,132,1)'],
+                data: [{{average_attendance*100}}, missed_attendance]
+            }]
+            },
+            options: {
+
+            responsive: true, 
+
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: true
+            },
+
+            animation: {
+                duration: 2000, //ms
+                easing: 'easeInOutQuint'
+            }
+            }
+        });
+        
+        // get chart canvas
+        var ctx = document.getElementById("myChart23").getContext("2d");
+        
+        // create the chart using the chart canvas
+        var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: options
+        });
+        
+    </script>
+
+
+{% endblock %}
