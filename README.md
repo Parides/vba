@@ -16,6 +16,11 @@ VBA is an attendance monitoring system, that uses the OpenCV library for python,
 
 ## 🛠 Initialization & Setup 
 
+#### Clone the repository
+
+```sh
+git clone https://github.com/Parides/vba.git
+```
 #### Install all dependencies
 
 ```sh
