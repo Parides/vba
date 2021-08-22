@@ -18,7 +18,10 @@ pip install -r requirements.txt
 ## Usage
 
 ```sh
-python app.py | python api.py
+python app.py
+```
+```sh
+python api.py
 ```
 
 ## Author
