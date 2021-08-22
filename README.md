@@ -12,7 +12,15 @@
 ## 📰 Description
 VBA is an attendance monitoring system, that uses the OpenCV library for python, to identify individuals and log their attendance. Additionally, the project has a front end where an institution can manage their teachers, the teachers can manage their modules, students and their attendance, and the students can view their attendance analytics and manage their private data.
 
-### ➡ [Video Demonstration of all functionalities](https://youtu.be/asec-YM0UjM)
+## ▶ Demo
+
+<div align="center">
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/asec-YM0UjM/0.jpg)](https://youtu.be/asec-YM0UjM)
+
+  <h4><a href="https://youtu.be/asec-YM0UjM">Watch on YouTube</a> </h4>
+ 
+</div>
 
 ## 🛠 Initialization & Setup 
 
