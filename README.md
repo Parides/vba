@@ -1,5 +1,5 @@
 <h1 align="center">Welcome to Vision Based Attendance Analyzer 👋</h1>
-<p>
+<p alight="center">
   <a href="www.google.com" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
