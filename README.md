@@ -33,9 +33,3 @@ python api.py
 
 * Github: [@Parides](https://github.com/Parides)
 * LinkedIn: [@parides](https://linkedin.com/in/parides)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
