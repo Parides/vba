@@ -1,5 +1,5 @@
 <h1 align="center">Welcome to Vision Based Attendance Analyzer 👋</h1>
-<p alight="center">
+<p align="center">
   <a href="www.google.com" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -9,21 +9,24 @@ VBA is an attendance monitoring system, that uses the OpenCV library for python,
 
 ### ✨ [Demo](https://youtu.be/asec-YM0UjM)
 
-## Install
+## 🛠 Install
+
+Install all dependencies
 
 ```sh
 pip install -r requirements.txt
 ```
 
-## Usage
+## 🚀 Usage
 
+Initialize the attendance management system
 ```sh
 python app.py
 ```
+Initialize the attendance monitoring system
 ```sh
 python api.py
 ```
-
 ## Author
 
 👤 **Andreas Paridis**
@@ -36,4 +39,3 @@ python api.py
 Give a ⭐️ if this project helped you!
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
