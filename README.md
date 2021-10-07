@@ -1,26 +1,22 @@
-<<<<<<< HEAD
 <h1 align="center">Welcome to Vision Based Attendance Analyzer 👋</h1>
 <p>
-=======
 <div align="center">
   <img alt="logo" src="https://github.com/Parides/vba/blob/4c02d52aeb1fe2bcbae68f9dec399ea049015a99/web/css/dashboard.png" width="100"/>
   <h1>Vision Based Attendance Analyzer</h1>
   <p>Welcome to the first iteration of my final year project 👋</p>
 </div>
 <p align="center">
->>>>>>> 13fa55b293d8df9ef5eb3ffdea1df9a697839aa2
   <a href="www.google.com" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
 </p>
 
-<<<<<<< HEAD
-> VBA is an attendance monitoring system, that uses the OpenCV library for python, to identify individuals and log their attendance. Additionally, the project has a front end where an institution can manage their teachers, the teachers can manage their modules, students and their attendance, and the students can view their attendance analytics and manage their private data.
+VBA is an attendance monitoring system, that uses the OpenCV library for python, to identify individuals and log their attendance. Additionally, the project has a front end where an institution can manage their teachers, the teachers can manage their modules, students and their attendance, and the students can view their attendance analytics and manage their private data.
 
 ### ✨ [Demo](https://youtu.be/asec-YM0UjM)
 
 ## Install
-=======
+
 ## 📰 Description
 VBA is an attendance monitoring system, that uses the OpenCV library for python, to identify individuals and log their attendance. Additionally, the project has a front end where an institution can manage their teachers, the teachers can manage their modules, students and their attendance, and the students can view their attendance analytics and manage their private data.
 
@@ -42,12 +38,10 @@ VBA is an attendance monitoring system, that uses the OpenCV library for python,
 git clone https://github.com/Parides/vba.git
 ```
 #### Install all dependencies
->>>>>>> 13fa55b293d8df9ef5eb3ffdea1df9a697839aa2
 
 ```sh
 pip install -r requirements.txt
 ```
-<<<<<<< HEAD
 
 ## Usage
 
@@ -55,12 +49,13 @@ pip install -r requirements.txt
 python app.py | python api.py
 ```
 
-=======
-#### 
+#### Database Setup
 
 ```sh
 psql dbname < database_schema.sql
 ```
+** Ensure the right settings are in config.ini **
+
 [More help here](https://www.postgresql.org/docs/9.1/backup-dump.html)
 
 ## 🚀 Building and Running
@@ -82,20 +77,13 @@ python api.py
 5. Assign students to modules using the teacher accounts
 
 All other fucntionalities can be found in the [demo](https://youtu.be/asec-YM0UjM)
->>>>>>> 13fa55b293d8df9ef5eb3ffdea1df9a697839aa2
 ## Author
 
 👤 **Andreas Paridis**
 
 * Github: [@Parides](https://github.com/Parides)
 * LinkedIn: [@parides](https://linkedin.com/in/parides)
-<<<<<<< HEAD
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
-=======
->>>>>>> 13fa55b293d8df9ef5eb3ffdea1df9a697839aa2
